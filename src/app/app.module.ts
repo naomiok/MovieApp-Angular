@@ -21,6 +21,9 @@ import { ViewProfileComponent } from './components/view-profile/view-profile.com
 import { UpdateProfileComponent } from './components/update-profile/update-profile.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
 
+import {SidebarModule} from 'ng-sidebar';
+import { MovieComponent } from './component/movie/movie.component';
+import { MovieListComponent } from './component/movie-list/movie-list.component';
 
 
 
@@ -38,6 +41,9 @@ import { SidenavComponent } from './components/sidenav/sidenav.component';
     ViewProfileComponent,
     UpdateProfileComponent,
     SidenavComponent,
+    MovieComponent,
+    MovieListComponent,
+
     
    
     
@@ -50,6 +56,7 @@ import { SidenavComponent } from './components/sidenav/sidenav.component';
     FormsModule,
     BrowserAnimationsModule,
     NgbModule,
+    SidebarModule,
     BsDropdownModule.forRoot()
   ],
   providers: [],
