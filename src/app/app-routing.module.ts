@@ -14,9 +14,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { MovieStorageService } from './services/movie-storage.service';
 import { FormsModule } from '@angular/forms';
+import { LogoutComponent } from './components/logout/logout.component';
+
+
 const routes: Routes = [
   {path:'login', component: LoginComponent},
   {path:'register', component:RegisterUserComponent},
+  {path:'logout', component:LogoutComponent},
   {path:'home', component:HomeComponent},
   {path:'favorites', component:FavoritesComponent},
   {path:'watched', component:WatchedComponent},
