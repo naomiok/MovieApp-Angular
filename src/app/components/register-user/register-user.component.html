@@ -1,0 +1,61 @@
+<br><h3>Register</h3><br>
+
+<form>
+    
+        <div style="max-width: 40%" >
+               
+                  <label for="inputFirstname">First Name</label>
+             <input type="firstname" [(ngModel)] = user.firstname class="form-control" placeholder="First name" [ngModelOptions]="{standalone: true}">
+  
+        </div>
+        <div style="max-width: 40%">
+         
+            <label for="inputLastname">Last Name</label>
+            <input type="lastname" [(ngModel)] = user.lastname class="form-control" placeholder="Last name" [ngModelOptions]="{standalone: true}">
+         
+        </div>
+        <div style="max-width: 40%">
+        
+            <label for="inputEmail">Email</label>
+            <input type="email" [(ngModel)] = user.email class="form-control" placeholder="Email" [ngModelOptions]="{standalone: true}">
+          
+        </div>
+        <div style="max-width: 40%">
+          
+            <label for="inputPassword">Password</label>
+            <input type="password" [(ngModel)] = user.password class="form-control" placeholder="Password" [ngModelOptions]="{standalone: true}">
+          
+        </div>
+        <div style="max-width: 40%">
+        
+          <label for="inputAddress">Address</label>
+          <input type="address" [(ngModel)] = user.address class="form-control" placeholder="Address" [ngModelOptions]="{standalone: true}">
+        
+        </div>
+        <div style="max-width: 40%">
+          
+            <label for="inputCity">City</label>
+            <input type="city" [(ngModel)] = user.city class="form-control" placeholder="City" [ngModelOptions]="{standalone: true}">
+          
+        </div>
+        <div style="max-width: 40%">
+
+            <label for="inputState">State</label>
+            <input typr="state" [(ngModel)] = user.state class="form-control" placeholder="State" [ngModelOptions]="{standalone: true}">
+        
+          
+        </div>
+        <div style="max-width: 40%">
+          
+                <label for="inputPhonenumber">Phone Number</label>
+                <input type="phonenumber" [(ngModel)] = user.phonenumber class="form-control" placeholder="Phone number" [ngModelOptions]="{standalone: true}">
+              
+        </div>
+
+          
+       <br>
+        <button type="submit" class="btn btn-primary" (click)="register()" >Sign in</button>
+      
+        
+      </form>
+
