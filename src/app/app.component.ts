@@ -9,7 +9,7 @@ import { MovieStorageService } from './services/movie-storage.service';
   encapsulation: ViewEncapsulation.None
 })
 export class AppComponent implements OnInit {
-  filter= '';
+  // filter= '';
   constructor(
     private movies: MovieStorageService,
   ) {}
