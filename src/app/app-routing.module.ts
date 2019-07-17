@@ -8,7 +8,12 @@ import { FavoritesComponent } from './components/favorites/favorites.component';
 import { ResetComponent } from './components/reset/reset.component';
 import { ViewProfileComponent } from './components/view-profile/view-profile.component';
 import { UpdateProfileComponent } from './components/update-profile/update-profile.component';
-
+import { MovieListComponent } from './component/movie-list/movie-list.component';
+import { MovieComponent } from './component/movie/movie.component';
+import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
+import { MovieStorageService } from './services/movie-storage.service';
+import { FormsModule } from '@angular/forms';
 const routes: Routes = [
   {path:'login', component: LoginComponent},
   {path:'register', component:RegisterUserComponent},
@@ -18,12 +23,20 @@ const routes: Routes = [
   {path:'reset', component:ResetComponent},
   {path:'view-profile', component:ViewProfileComponent},
   {path:'update-profile', component:UpdateProfileComponent},
-  {path:'', redirectTo: 'login', pathMatch: 'full'}
+  {path: ':category', component: MovieListComponent},
+  {path:'', redirectTo: 'login', pathMatch: 'full'},
 ];
 
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+
+  imports: [RouterModule.forRoot(routes),
+  
+  
+  ],
+  providers: [
+    MovieStorageService
+  ],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

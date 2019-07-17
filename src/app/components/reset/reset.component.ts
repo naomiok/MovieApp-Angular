@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ResetPasswordService} from '../../services/reset-password.service';
 
 @Component({
   selector: 'app-reset',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ResetComponent implements OnInit {
 
-  constructor() { }
+  email:string;
+  constructor(private restPass: ResetPasswordService,) { }
 
   ngOnInit() {
   }
 
+  recoverPassword(email){
+    console.log('reset= ' +email)
+    this.restPass.recoverPassword(email).subscribe( (res)=>{
+      console.log(res);
+      alert('Please check your email inbox')
+  });
+}
 }

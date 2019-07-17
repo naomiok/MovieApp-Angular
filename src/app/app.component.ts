@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {ViewEncapsulation} from '@angular/core';
+import { MovieStorageService } from './services/movie-storage.service';
 
 @Component({
   selector: 'app-root',
@@ -7,6 +8,16 @@ import {ViewEncapsulation} from '@angular/core';
   styleUrls: ['./app.component.css'],
   encapsulation: ViewEncapsulation.None
 })
-export class AppComponent {
-  title = 'bankapp-angular';
+export class AppComponent implements OnInit {
+  // filter= '';
+  constructor(
+    private movies: MovieStorageService,
+  ) {}
+  ngOnInit() {
+
+  }
+
+  // search(filter) {
+  //   this.movies.emitChange(filter);
+  // }
 }
