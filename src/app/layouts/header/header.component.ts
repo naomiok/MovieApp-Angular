@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MovieService } from 'src/app/services/movie.service';
 import { MovieStorageService } from 'src/app/services/movie-storage.service';
 import {MovieListComponent} from '../../component/movie-list/movie-list.component';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-header',
@@ -11,7 +12,8 @@ import {MovieListComponent} from '../../component/movie-list/movie-list.componen
 export class HeaderComponent implements OnInit {
   
 
-   constructor(private storage : MovieStorageService, ) { }
+   constructor(private storage : MovieStorageService, private userService:UserService ) { }
+  
 
   ngOnInit() {
   }
@@ -36,3 +38,6 @@ searchMovie(movieName) {
 
 
 }
+
+
+

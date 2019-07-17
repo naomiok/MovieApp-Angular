@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from 'src/app/services/user.service';
+import { Router } from '@angular/router';
+import { User} from 'src/app/models/user';
+
+
 
 @Component({
   selector: 'app-update-profile',
@@ -7,9 +12,58 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UpdateProfileComponent implements OnInit {
 
-  constructor() { }
+  id:number;
 
+  // user:User = {
+   // id:3
+  //   firstname:'naomi',
+  //   lastname:'d',
+  //   email:'d',
+  //   password:'d',
+  //   address:'d',
+  //   city:'d',
+  //   state:'d',
+  //   phonenumber:'d'
+  // };
+
+  //user = sessionStorage.getItem('loggedInUser');
+
+  constructor(private userService:UserService, private router:Router) { }
+
+ 
   ngOnInit() {
+    this.loadUserData();
   }
 
+  user:User;
+
+  loadUserData(){
+    
+      let user = JSON.parse(sessionStorage.getItem('user'));
+  
+      this.user = user;
+      
+  }
+
+  update(){
+    
+    console.log(this.user);
+    console.log(this.user.id);
+
+    this.userService.update(this.user.id, this.user).subscribe ( (res)=>{
+    console.log(res);  
+
+    
+
+    
+    });
+  }
 }
+
+
+
+
+
+
+
+

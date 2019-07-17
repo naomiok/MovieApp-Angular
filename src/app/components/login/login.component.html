@@ -1,19 +1,21 @@
 
 
-<form class="px-4 py-3">
+<form class="px-4 py-3" >
+  
 
         <br><h3>Login</h3><br>
         <div class="form-group" style="max-width: 30%">
           <label for="exampleDropdownFormEmail1">Email address</label>
-          <input type="email" [(ngModel)] = "email" class="form-control" placeholder="Email" [ngModelOptions]="{standalone: true}">
+          <input type="email" [(ngModel)] = "email" class="form-control" placeholder="Email" [ngModelOptions]="{standalone: true}" required>
         </div>
         <div class="form-group" style="max-width: 30%">
           <label for="exampleDropdownFormPassword1">Password</label>
-          <input type="password" [(ngModel)] = "password" class="form-control" placeholder="Password" [ngModelOptions]="{standalone: true}">
+          <input type="password" [(ngModel)] = "password" class="form-control" placeholder="Password" [ngModelOptions]="{standalone: true}" required>
         </div>
        
         <button (click) = "login()" class="btn btn-primary">Sign in</button>
       </form>
       <div class="dropdown-divider"></div>
-      <a class="dropdown-item"  routerLink="/register" style="color:white">New around here? Sign up</a>
-      <a class="dropdown-item"  routerLink="/reset" style="color:white">Forgot password?</a>
+      <div class="link">
+      <a text-align="center" routerLink="/register" style="color:rgb(27, 55, 212)">New around here? Sign up</a><br>
+      <a routerLink="/reset" style="color:rgb(27, 55, 212)">Forgot password?</a></div>
