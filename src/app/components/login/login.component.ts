@@ -13,7 +13,7 @@ export class LoginComponent implements OnInit {
 
   id:number;
   errorMessage = 'Invalid Credentials';
-  invalidLogin = false;
+  invalidLogin = true;
   firstname:string;
   lastname:string;
   email:string;
@@ -44,18 +44,21 @@ export class LoginComponent implements OnInit {
 
       console.log(user);
       
-      if (res != null){
+      if (res != null){//Valid Login
         console.log(user)
         console.log(sessionStorage.getItem('user'))
       
         this.invalidLogin = false;
         sessionStorage.setItem('userId', `${user.id}`);
-        this.router.navigate(['home']);
+        this.router.navigate([':category']);
+        sessionStorage.setItem('loggedIn', "true");
+        sessionStorage.setItem('loggedOut', "false");
     }
-        else{
+        else{//Invalid Login
           this.invalidLogin = true;
           alert(this.errorMessage);
-
+          sessionStorage.setItem('loggedIn', "false");
+          sessionStorage.setItem('loggedOut', "true");
           this.router.navigate(['login']);
         }
     });

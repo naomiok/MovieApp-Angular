@@ -38,17 +38,28 @@ export class UserService {
 
   }
 
-  isUserLoggedIn(){
-    let user = sessionStorage.getItem('user');
+  isUserLoggedIn():boolean{
+    //let user = sessionStorage.getItem('user');
+    let isLoggedOut = sessionStorage.getItem('loggedOut');
+    let isLoggedIn = sessionStorage.getItem('loggedIn');
+  //   let invalid = (user === 'null');//invalid is TRUE if the login is invalid.
+  //  console.log(invalid);
+  //   return !invalid;
     
-    let invalid = (user === null);
-   
-    return !invalid;
+    if(isLoggedIn === 'true' && isLoggedOut === 'false'){//Logging in
+      console.log("Logged in");
+      return true;
+    }
+    else{ 
+      return false;
+    }
   }
 
   logout(){
     sessionStorage.removeItem('user');
-   
+    sessionStorage.setItem('loggedOut', "true");
+    sessionStorage.setItem('loggedIn', "false");
+    //return false;
   }
   // getUser() : Observable <User[]>{
   //   return this.http.get<User[]>(this.serverUrl)

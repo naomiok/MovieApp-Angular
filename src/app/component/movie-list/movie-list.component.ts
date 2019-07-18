@@ -27,7 +27,12 @@ export class MovieListComponent implements OnInit {
     }
   
   ngOnInit() {
+
     console.log('this.route.params = ' + this.route.params);
+    if (this.route.params === null){
+      this.getInitalList();
+    }
+    else{
     this.route.params
     .subscribe(
       (params: Params) => {
@@ -38,8 +43,20 @@ export class MovieListComponent implements OnInit {
     );
 
       }
+    }
       //console.log(this.header.movieList2);
-
+      getInitalList() {
+        //console.log('category =' +this.selectedCategory);
+        this.storage.getInitialList(12)
+        .subscribe(
+          (response) => {
+            console.log(response);
+  
+            this.moviesList = response['results'];
+            console.log('moviesList = ' + this.moviesList);
+          }
+        );
+      }
 
      // movie : [];
       getList() {

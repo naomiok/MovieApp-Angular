@@ -49,12 +49,20 @@ export class UpdateProfileComponent implements OnInit {
     
     console.log(this.user);
     console.log(this.user.id);
+    
+      
 
     this.userService.update(this.user.id, this.user).subscribe ( (res)=>{
     console.log(res);  
-
+    //let user = JSON.parse(sessionStorage.getItem('user'));
+    //console.log('thing' +this.user);
     
-
+    
+    let newUser = JSON.stringify(this.user);
+    console.log(newUser);
+    sessionStorage.setItem('user', `${newUser}`);
+    alert('Your information has been updated.');
+    this.router.navigate([':category']);
     
     });
   }

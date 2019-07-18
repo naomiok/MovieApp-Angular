@@ -26,10 +26,11 @@ export class ViewProfileComponent implements OnInit {
     
     
     console.log(user);
-      // this.userService.findById(this.id).subscribe ( (res)=>{
+      //  this.userService.findById(this.id).subscribe ( (res)=>{
       //   console.log(res);  
         
-      // });
+        
+      //  });
       this.user = user;
   }
 }

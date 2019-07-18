@@ -19,15 +19,22 @@ export class MovieStorageService {
   // emitChange(change: any) {
   //     this.searchFilter.next(change);
   // }
-
+getInitialList(category){
+  return this.http.get(this.apiUrl + '3/discover/movie' + this.apiKey + '&with_genres=' + category)
+}
 
   getList(category){
     console.log('category = ' + category)
+    if (category === ':category'){
+      return this.http.get(this.apiUrl + '3/discover/movie' + this.apiKey + '&with_genres=12')
+    }
+    else{
     //https://api.themoviedb.org/3/discover/movie?api_key=###&with_genres=28
     //return this.http.get(this.apiUrl + '3/discover/movie' + this.apiKey + '&with_genres=28');
     //return this.http.get(this.apiUrl + '3/movie/' + category + this.apiKey);
     return this.http.get(this.apiUrl + '3/discover/movie' + this.apiKey + '&with_genres=' + category)
   }
+}
 
   getImageUrl(){
     return this.imageUrl;
